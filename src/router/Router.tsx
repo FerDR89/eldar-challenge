@@ -1,12 +1,11 @@
+import { useAppSelector } from "../hooks/useAppSelector";
+import { selectAuth } from "../redux/slices/auth";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
 
-//Si está autenticado puede ingresar al private
-
-const auth = false;
-
 const MyRouter = () => {
-  return auth ? <PrivateRouter /> : <PublicRouter />;
+  const { isAuthenticated } = useAppSelector(selectAuth);
+  return isAuthenticated ? <PrivateRouter /> : <PublicRouter />;
 };
 
 export default MyRouter;
