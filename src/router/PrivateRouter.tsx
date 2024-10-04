@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "../components/layout/Layout";
-import Home from "../pages/home /Home";
+import Layout from "../components/layout";
+import Home from "../pages/home ";
 
 const PrivateRouter = () => {
   return (
