@@ -1,4 +1,14 @@
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { logout } from "../../redux/slices/auth";
+
 const Home = () => {
-  return <div>Home</div>;
+  const dispatch = useAppDispatch();
+
+  return (
+    <div>
+      <p>Home</p>
+      <button onClick={() => dispatch(logout())}>Logout</button>
+    </div>
+  );
 };
 export default Home;
