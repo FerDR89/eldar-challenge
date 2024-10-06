@@ -1,15 +1,19 @@
-import { IUser } from "../interfaces/user ";
-export const mockedUsers: IUser[] = [
+import { IUserMock } from "../interfaces/user ";
+
+export const mockedUsers: IUserMock[] = [
   {
     password: "Test123@",
-    role: "user",
+    role: ["user"],
     userId: "user@test.com",
-    userName: "user@test.com",
   },
   {
     password: "Test123@",
-    role: "admin",
+    role: ["admin"],
     userId: "admin@test.com",
-    userName: "admin@test.com",
+  },
+  {
+    password: "Test123@",
+    role: ["admin", "user"],
+    userId: "userAdmin@test.com",
   },
 ];
