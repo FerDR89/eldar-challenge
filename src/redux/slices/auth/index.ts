@@ -23,12 +23,7 @@ export const authSlice = createSlice({
       };
     },
 
-    logout: (state) => {
-      return {
-        userId: "",
-        isAuthenticated: !state.isAuthenticated,
-      };
-    },
+    logout: () => initialState,
   },
 });
 
