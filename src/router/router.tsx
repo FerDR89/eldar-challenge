@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../pages/login";
 import ProtectedRoute from "./protectedRoute";
 import Home from "../pages/home ";
-import Layout from "../components/layout";
+import Layout from "../layout";
 import NotFound from "../pages/notFound";
 import Dashboard from "../pages/dashboard";
 import NotPermissions from "../pages/notPermissions";
