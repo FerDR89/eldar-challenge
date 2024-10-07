@@ -12,9 +12,6 @@ const postSlice = createSlice({
       return action.payload;
     },
     createPost: (state, action: PayloadAction<IPost>) => {
-      console.log(state);
-      console.log(action.payload);
-
       return [...state, action.payload];
     },
     updatePost: (state, action: PayloadAction<TUpdatePost>) => {
