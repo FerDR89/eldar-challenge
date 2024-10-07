@@ -5,5 +5,8 @@ export interface IPost {
   userId: number;
 }
 
+export type TCreatePost = Pick<IPost, "body" | "title">;
+export type TCreatePostService = TCreatePost & Pick<IPost, "userId">;
+
 export type TUpdatePost = Pick<IPost, "id"> &
   Partial<Pick<IPost, "body" | "title">>;
