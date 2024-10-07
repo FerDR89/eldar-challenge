@@ -1,7 +1,8 @@
-import { mockedUsers } from "../../api/db";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { login } from "../../redux/slices/auth";
+import { createUser } from "../../redux/slices/user ";
+import { mockedUsers } from "../../api/db/db";
 
 function Login() {
   const dispatch = useAppDispatch();
@@ -18,9 +19,17 @@ function Login() {
 
       if (!foundUser) throw new Error("usuario no encontrado");
 
-      dispatch(login({ userId: foundUser.userId }));
+      dispatch(login({ userName: foundUser.userName }));
 
-      navigate("/");
+      dispatch(
+        createUser({
+          userName: foundUser.userName,
+          userId: foundUser.userId,
+          role: foundUser.role,
+        })
+      );
+
+      navigate("/home", { replace: true });
     } catch (error) {
       console.log(error);
     }
