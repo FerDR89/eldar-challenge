@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { IUser } from "../../../interfaces/user ";
 
-type TAuth = Pick<IUser, "userId"> & {
+type TAuth = Pick<IUser, "userName"> & {
   isAuthenticated: boolean;
 };
 
 const initialState: TAuth = {
-  userId: "",
+  userName: "",
   isAuthenticated: false,
 };
 
@@ -15,10 +15,10 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<Pick<IUser, "userId">>) => {
-      const { userId } = action.payload;
+    login: (state, action: PayloadAction<Pick<IUser, "userName">>) => {
+      const { userName } = action.payload;
       return {
-        userId,
+        userName,
         isAuthenticated: !state.isAuthenticated,
       };
     },
