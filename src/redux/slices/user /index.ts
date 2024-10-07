@@ -3,7 +3,8 @@ import { IUser } from "../../../interfaces/user ";
 import { RootState } from "../../store";
 
 const initialState: IUser = {
-  userId: "",
+  userId: 0,
+  userName: "",
   role: [],
 };
 
