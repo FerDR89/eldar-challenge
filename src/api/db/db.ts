@@ -4,16 +4,13 @@ export const mockedUsers: IUserMock[] = [
   {
     password: "Test123@",
     role: ["user"],
-    userId: "user@test.com",
+    userName: "user@test.com",
+    userId: 1,
   },
   {
     password: "Test123@",
     role: ["admin"],
-    userId: "admin@test.com",
-  },
-  {
-    password: "Test123@",
-    role: ["admin", "user"],
-    userId: "userAdmin@test.com",
+    userName: "admin@test.com",
+    userId: 2,
   },
 ];

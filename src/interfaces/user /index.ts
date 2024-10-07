@@ -2,7 +2,8 @@ import { TRoles } from "../roles";
 
 export interface IUser {
   role: TRoles[];
-  userId: string;
+  userName: string;
+  userId: number;
 }
 
 export interface IUserMock extends IUser {
