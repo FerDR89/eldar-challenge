@@ -4,7 +4,7 @@ import { TCreatePostService } from "../../interfaces/post";
 
 export const getAllPostsService = async () => {
   try {
-    const result = await axios.get("/posts?_limit=10");
+    const result = await axios.get("/posts?_limit=3");
     return result.data;
   } catch (error) {
     const { message, status } = error as AxiosError;
