@@ -1,15 +1,23 @@
 import { colors, TextField } from "@mui/material";
-import { UseFormRegister } from "react-hook-form";
+import { FieldValues, Path, UseFormRegister } from "react-hook-form";
 
-interface IInput {
+interface IInput<T extends FieldValues> {
   error?: boolean;
   helperText?: string;
   label: string;
-  register: UseFormRegister<any>;
+  name: Path<T>;
+  register: UseFormRegister<T>;
   type: string;
 }
 
-const Input = ({ error, helperText, label, register, type }: IInput) => {
+const Input = <T extends FieldValues>({
+  error,
+  helperText,
+  label,
+  register,
+  type,
+  name,
+}: IInput<T>) => {
   return (
     <TextField
       label={label}
@@ -31,7 +39,7 @@ const Input = ({ error, helperText, label, register, type }: IInput) => {
       fullWidth
       error={error}
       helperText={helperText}
-      {...register}
+      {...register(name)}
     />
   );
 };
