@@ -1,11 +1,11 @@
 .header {
-  min-height: 5vh;
+  height: 10vh;
 }
 
 .main {
-  min-height: 80vh;
+  min-height: 85vh;
 }
 
 .footer {
-  min-height: 5vh;
+  height: 5vh;
 }
