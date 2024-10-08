@@ -10,7 +10,7 @@ const Header = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAppSelector(selectAuth);
 
-  const onLogOut = () => {
+  const handleLogout = () => {
     dispatch(logout());
     navigate("/", { replace: true });
   };
@@ -20,7 +20,7 @@ const Header = () => {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      py="15px"
+      height="100%"
     >
       <Typography variant="h6" color="primary">
         Eldar Challenge
@@ -30,9 +30,10 @@ const Header = () => {
         <Button
           variant="outlined"
           size="small"
+          color="secondary"
           endIcon={<LogoutIcon />}
           sx={{ color: colors.grey[500] }}
-          onClick={onLogOut}
+          onClick={handleLogout}
         >
           Salir
         </Button>
