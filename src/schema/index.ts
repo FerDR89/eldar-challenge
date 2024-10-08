@@ -22,3 +22,12 @@ export const loginSchema = yup
       .max(20, FEED_BACK_VALIDATION.maxCharacters),
   })
   .required();
+
+export const createPostSchema = yup.object({
+  body: yup.string().required(FEED_BACK_VALIDATION.required).trim(),
+  title: yup.string().required(FEED_BACK_VALIDATION.required).trim(),
+});
+export const updatePostSchema = yup.object({
+  body: yup.string().trim(),
+  title: yup.string().trim(),
+});
