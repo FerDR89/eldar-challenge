@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, colors, Stack, Typography } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import useAppSelector from "../../hooks/useAppSelector";
 import { logout, selectAuth } from "../../redux/slices/auth";
 
 const Header = () => {

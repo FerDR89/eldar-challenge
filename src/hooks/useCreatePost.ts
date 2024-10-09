@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { createPostService } from "../api/services";
 import { createPost } from "../redux/slices/post";
 import { TCreatePost } from "../interfaces/post";
-import { useAppSelector } from "./useAppSelector";
+import useAppSelector from "./useAppSelector";
 import { selectUser } from "../redux/slices/user ";
 
 const useCreatePost = () => {

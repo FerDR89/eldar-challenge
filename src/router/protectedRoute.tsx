@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAppSelector } from "../hooks/useAppSelector";
+import useAppSelector from "../hooks/useAppSelector";
 import { selectAuth } from "../redux/slices/auth";
 import { TRoles } from "../interfaces/roles";
 import { selectUser } from "../redux/slices/user ";
