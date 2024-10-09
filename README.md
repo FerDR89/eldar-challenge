@@ -29,6 +29,18 @@ Para ejecutar el proyecto de manera local, en ambiente dev, es necesario ejecuta
 npm run dev
 ```
 
+## Usuarios de prueba
+
+```bash
+  userName: "userTest"
+  password: "Test123@"
+```
+
+```bash
+  userName: "adminTest"
+  password: "Test123@"
+```
+
 ## API
 
 En el siguiente enlace podrás encontrar la documentación de la API utilizada: [JSONPlaceholder](https://jsonplaceholder.typicode.com/guide/)
