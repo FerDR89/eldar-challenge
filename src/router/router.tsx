@@ -1,11 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../pages/login";
 import ProtectedRoute from "./protectedRoute";
 import Home from "../pages/home ";
 import Layout from "../layout";
-import NotFound from "../pages/notFound";
-import Dashboard from "../pages/dashboard";
-import NotPermissions from "../pages/notPermissions";
 
 const MyRouter = () => {
   return (
@@ -14,7 +11,7 @@ const MyRouter = () => {
         {/* Public Routes */}
         <Route index element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/login" />} />
 
         {/* Common Authenticated Routes */}
         <Route
@@ -27,19 +24,6 @@ const MyRouter = () => {
         >
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/notPermissions" element={<NotPermissions />} />
-
-          {/* Admin Authenticated Routes */}
-          <Route
-            element={
-              <ProtectedRoute
-                allowedRoles={["admin"]}
-                redirectTo="/notPermissions"
-              />
-            }
-          >
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
         </Route>
       </Route>
     </Routes>
