@@ -8,7 +8,11 @@ const useGetAllPost = () => {
     retry: 1,
   });
 
-  return { isPending, isError, error, data };
+  if (error) {
+    console.error(error);
+  }
+
+  return { isPending, isError, data };
 };
 
 export default useGetAllPost;
