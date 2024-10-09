@@ -1,5 +1,3 @@
-() Incluye un README detallado que explique la estructura del proyecto y cómo
-
 # ELDAR CHALLENGE
 
 ## Descripción
