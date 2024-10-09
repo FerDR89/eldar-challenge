@@ -6,6 +6,7 @@ const axiosAPI = axios.create({
 });
 
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
-axios.defaults.headers.put["Content-Type"] = "application/json; charset=UTF-8";
+axios.defaults.headers.patch["Content-Type"] =
+  "application/json; charset=UTF-8";
 
 export default axiosAPI;
