@@ -8,6 +8,7 @@ interface IInput<T extends FieldValues> {
   name: Path<T>;
   register: UseFormRegister<T>;
   type: string;
+  multiline?: boolean;
 }
 
 const Input = <T extends FieldValues>({
@@ -17,6 +18,7 @@ const Input = <T extends FieldValues>({
   register,
   type,
   name,
+  multiline,
 }: IInput<T>) => {
   return (
     <TextField
@@ -39,6 +41,7 @@ const Input = <T extends FieldValues>({
       fullWidth
       error={error}
       helperText={helperText}
+      multiline={multiline}
       {...register(name)}
     />
   );
