@@ -12,15 +12,25 @@ import { useState } from "react";
 
 interface IListPost {
   posts: IPost[];
-  setPostChecked: (post: IPost) => void;
+  setPostChecked: (post: IPost | null) => void;
+  hasPermissionToEdit: boolean;
 }
 
-const ListPost = ({ posts, setPostChecked }: IListPost) => {
+const ListPost = ({
+  posts,
+  setPostChecked,
+  hasPermissionToEdit,
+}: IListPost) => {
   const [checked, setChecked] = useState<number | null>(null);
 
   const handleCheckBox = (post: IPost) => {
-    setChecked(post.id);
-    setPostChecked(post);
+    if (checked === post.id) {
+      setChecked(null);
+      setPostChecked(null);
+    } else {
+      setChecked(post.id);
+      setPostChecked(post);
+    }
   };
 
   return (
@@ -46,6 +56,7 @@ const ListPost = ({ posts, setPostChecked }: IListPost) => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
+                width: "100%",
               }}
             >
               <ListItemText
@@ -63,16 +74,21 @@ const ListPost = ({ posts, setPostChecked }: IListPost) => {
               />
               <ListItemText
                 primary={post.body}
-                sx={{ color: colors.grey[500] }}
+                sx={{ color: colors.grey[500], overflowWrap: "anywhere" }}
               />
             </Box>
-            <ListItemIcon>
-              <Checkbox
-                edge="start"
-                checked={checked === post.id}
-                onChange={() => handleCheckBox(post)}
-              />
-            </ListItemIcon>
+            {hasPermissionToEdit && (
+              <ListItemIcon>
+                <Checkbox
+                  edge="start"
+                  color="secondary"
+                  id={post.id.toString()}
+                  checked={checked === post.id}
+                  onChange={() => handleCheckBox(post)}
+                  sx={{ color: colors.deepPurple[700] }}
+                />
+              </ListItemIcon>
+            )}
           </ListItem>
         );
       })}
